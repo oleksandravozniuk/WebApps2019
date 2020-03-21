@@ -1,0 +1,25 @@
+﻿@model TheatreApp.WEB.Models.OrderViewModel
+
+
+@{
+    ViewBag.Title = "EditOrder";
+}
+
+
+
+@using (Html.BeginForm("EditOrder", "Home", FormMethod.Post))
+{
+    <fieldset>
+        @Html.HiddenFor(model => model.TicketId)
+
+        <p>
+            @Html.LabelFor(m => m.Bought, "Buy or not to buy")
+            <br />
+            @Html.EditorFor(m => m.Bought)
+        </p>
+        <p><input type="submit" value="Отправить" /></p>
+    </fieldset>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
